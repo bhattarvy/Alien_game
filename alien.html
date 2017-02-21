@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>alien game</title>
+    <canvas width="64" height="64"></canvas>
+    </head>
+    <body><h1>THIS IS THE GAME RELATED TO GUESSING</h1>
+        <meta charset="utf-8">
+      <style>
+          
+          #stage{
+              width:300px;
+              height: 300px;
+              background-image: url(little-grey-extraterrestial-aliens-animated-gif-image-4.gif);
+              position: relative;
+              
+              
+              
+              
+          }
+          #canon{
+              width: 40px;
+              height: 40px;
+              background-image: url(cannon.jpg);
+              position:absolute;
+            bottom: 1px;
+              
+                            border-radius: 20px;
+              
+              
+              
+              
+              
+          }
+          #missel{
+              width: 20px;
+              height: 20px;
+              background-image: url(missel.png);
+              position:absolute;
+              bottom: 60px;
+              left: 10px;
+              
+          }
+          #alien{
+              width:40px;
+              height: 40px;
+            background-image: url(alien.jpg);
+              position:absolute;
+              
+          }
+        
+                
+        </style>
+        <input id="guess" type="button" >
+        
+      <ul>
+        <li>rules of this game:::</li>
+          <li>this is the box of 300 by 3oo metere</li>
+          <li>and by your thinking skills you have to guess where you have to shoot</li>
+          <li>so let your thinking skill go beyond your limit</li>
+        
+        </ul>
+        <div id="stage">
+        <div id="canon"></div>
+        <div id="missel"></div>
+        <div id="alien"></div>
+        </div>
+        <img src="cart3.jpg">
+        <script>
+      var n=60;
+        var y= 300;
+            var guess=document.getElementById("guess");
+            var missel=document.getElementById("missel");
+        var canon=document.getElementById("canon");
+        var alien=document.getElementById("alien");
+            set();
+            function set(){
+                var x=Math.floor(Math.random()*100);
+      
+            alien.style.left=x+"px";
+            y=y-30;
+                if(y==0)
+                    {
+                        prompt("game over");
+                    }
+            alien.style.bottom=y+"px";
+            
+           
+                var q=prompt("enter your guess");
+                var z=prompt("enter axises");
+               
+                canon.style.left=q+"px";
+                missel.style.left=q+"px";
+                
+                if((q>=x-10 &&q<=x+40))//& (z>=y && z<=y+40))*/
+                    {   alert(y);
+                        var o=setInterval(hit,30);
+                      
+                     
+                    }
+                else{
+                    set();
+                }
+           }
+    
+            function hit(){
+                if(n>=y-20 && n<=y)
+                    {  alert("game over");
+                       
+                        
+                        clearInterval(o);
+                      
+                    }
+                missel.style.bottom=n+"px";
+                n=n+4;
+            }
+                
+           
+        </script>
+           
+    
+    
+    </body>
+
+</html>
